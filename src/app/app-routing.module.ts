@@ -12,9 +12,9 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'modal',
-    loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
-  },
+    path: 'control-access',
+    loadChildren: () => import('./control-access/control-access.module').then( m => m.ControlAccessModule)
+  }
 ];
 
 @NgModule({
