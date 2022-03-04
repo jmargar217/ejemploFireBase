@@ -3,3 +3,8 @@ export interface UsuarioRegister{
   email:string,
   password:string
 }
+
+export interface Usuario{
+  email:string,
+  password:string
+}

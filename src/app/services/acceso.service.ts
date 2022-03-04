@@ -1,16 +1,32 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData, doc, docData, addDoc, deleteDoc, updateDoc } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { UsuarioRegister } from '../interfaces/interface';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { Firestore} from '@angular/fire/firestore';
+import { Usuario, UsuarioRegister } from '../interfaces/interface';
+import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword } from 'firebase/auth';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AccesoService {
-  constructor(private firestore: Firestore) { }
+  constructor(private firestore: Firestore, private router:Router) { }
 
+  login(usuario:Usuario){
+    const auth = getAuth();
+signInWithEmailAndPassword(auth, usuario.email, usuario.password)
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    this.router.navigateByUrl('menu');
+    // ...
+  })
+  .catch((error) => {
+    console.log('error');
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+
+  }
 
   registro(usuario:UsuarioRegister){
     const auth = getAuth();
