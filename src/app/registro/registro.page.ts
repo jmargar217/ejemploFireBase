@@ -9,7 +9,7 @@ import { AccesoService } from '../services/acceso.service';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage implements OnInit {
-  formulario:FormGroup=this.fb.group({
+  formulario: FormGroup=this.fb.group({
     email:! [''],
     password:![''],
   });

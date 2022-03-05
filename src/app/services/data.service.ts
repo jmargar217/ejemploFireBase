@@ -1,12 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, collectionData, doc, docData, addDoc, deleteDoc, updateDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-
-export interface Note {
-  id?: string;
-  title: string;
-  text: string;
-}
+import { Bicicleta } from '../interfaces/interface';
 
 @Injectable({
   providedIn: 'root'
@@ -15,28 +10,28 @@ export class DataService {
 
   constructor(private firestore: Firestore) { }
 
-  getNotes(): Observable<Note[]> {
-    const notesRef = collection(this.firestore, 'notes');
-    return collectionData(notesRef, { idField: 'id'}) as Observable<Note[]>;
+  getBicis(): Observable<Bicicleta[]> {
+    const biciRef = collection(this.firestore, 'bicicletas');
+    return collectionData(biciRef, { idField: 'id'}) as Observable<Bicicleta[]>;
   }
 
-  getNoteById(id): Observable<Note> {
-    const noteDocRef = doc(this.firestore, `notes/${id}`);
-    return docData(noteDocRef, { idField: 'id' }) as Observable<Note>;
+  getBiciById(id): Observable<Bicicleta> {
+    const biciRef = doc(this.firestore, `bibicletas/${id}`);
+    return docData(biciRef, { idField: 'id' }) as Observable<Bicicleta>;
   }
 
-  addNote(note: Note) {
-    const notesRef = collection(this.firestore, 'notes');
-    return addDoc(notesRef, note);
+  addBici(bicicleta: Bicicleta) {
+    const biciRef = collection(this.firestore, 'bicicletas');
+    return addDoc(biciRef, bicicleta);
   }
 
-  deleteNote(note: Note) {
-    const noteDocRef = doc(this.firestore, `notes/${note.id}`);
-    return deleteDoc(noteDocRef);
+  deleteBici(bicicleta: Bicicleta) {
+    const biciRef = doc(this.firestore, `bicicletas/${bicicleta.id}`);
+    return deleteDoc(biciRef);
   }
 
-  updateNote(note: Note) {
-    const noteDocRef = doc(this.firestore, `notes/${note.id}`);
-    return updateDoc(noteDocRef, { title: note.title, text: note.text });
+  updateBici(bicicleta: Bicicleta) {
+    const biciRef = doc(this.firestore, `bicicletas/${bicicleta.id}`);
+    return updateDoc(biciRef, { marca: bicicleta.marca, modelo: bicicleta.modelo, color:bicicleta.color});
   }
 }

@@ -22,7 +22,6 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      const uid = localStorage.getItem('uid');
       const result = this.servicioAcceso.getUsarioSesion();
 
       result.then(resp=>{
@@ -30,7 +29,6 @@ export class AuthGuard implements CanActivate {
           this.showAlert();
           this.router.navigateByUrl('home');
         }
-
       });
 
     return result.then();
