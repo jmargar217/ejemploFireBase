@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title *ngIf="ver">
+            <a routerLink="/biblioteca">
+                <ion-icon style="color: white;" name="caret-back-outline"></ion-icon>
+            </a>
+            {{ bicicleta.marca}} {{bicicleta.modelo}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+    <div *ngIf="ver">
+        <ion-card>
+            <div class="img-container">
+                <img src="https://cdn.todomountainbike.net/images/articles/2020/niner-garantia-de-por-vida.jpg">
+            </div>
+            <ion-card-content>
+                <ion-text color="dark">
+                    <p><b>Marca:</b> {{bicicleta.marca}}</p>
+                </ion-text>
+                <ion-text color="dark">
+                    <p><b>Modelo:</b> {{bicicleta.modelo}}</p>
+                </ion-text>
+                <ion-text color="dark">
+                    <p><b>Color:</b> {{bicicleta.color}}</p>
+                </ion-text><br>
+                <ion-row>
+                    <ion-col sizeLg="2" sizeMd="2" sizeXl="1">
+                        <button routerLink='/login' ion-button icon-left>
+                          <ion-icon name="create-outline" style="zoom:2.0;"></ion-icon>Editar
+                        </button>
+                    </ion-col>
+                    <ion-col sizeLg="2" sizeMd="2" sizeXl="1">
+                        <button (click)="borrar()" ion-button icon-left>
+                        <ion-icon name="trash-outline" style="zoom:2.0;"></ion-icon>Borrar
+                      </button>
+                    </ion-col>
+                </ion-row>
+
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>

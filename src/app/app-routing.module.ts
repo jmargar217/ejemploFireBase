@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: () => import('./listado-bicis/listado-bicis.module').then( m => m.ListadoBicisPageModule)
   },
   {
+    path: 'detalles',
+    loadChildren: () => import('./detalles/detalles.module').then( m => m.DetallesPageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'

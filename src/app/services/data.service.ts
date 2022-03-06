@@ -16,7 +16,7 @@ export class DataService {
   }
 
   getBiciById(id): Observable<Bicicleta> {
-    const biciRef = doc(this.firestore, `bibicletas/${id}`);
+    const biciRef = doc(this.firestore, `bicicletas/${id}`);
     return docData(biciRef, { idField: 'id' }) as Observable<Bicicleta>;
   }
 

@@ -30,7 +30,6 @@ export class AddBiciPage implements OnInit {
   }
 
   addBici(){
-    this.bicicleta.id = Date.now().toString();
     this.servicioCrud.addBici(this.bicicleta);
   }
 
