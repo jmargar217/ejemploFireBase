@@ -12,7 +12,7 @@
     <div *ngIf="ver">
         <ion-card>
             <div class="img-container">
-                <img src="https://cdn.todomountainbike.net/images/articles/2020/niner-garantia-de-por-vida.jpg">
+                <img src="{{bicicleta.imagen}}">
             </div>
             <ion-card-content>
                 <ion-text color="dark">
@@ -26,7 +26,7 @@
                 </ion-text><br>
                 <ion-row>
                     <ion-col sizeLg="2" sizeMd="2" sizeXl="1">
-                        <button routerLink='/login' ion-button icon-left>
+                        <button [routerLink]="['/editar-bici',bicicleta.id]" ion-button icon-left>
                           <ion-icon name="create-outline" style="zoom:2.0;"></ion-icon>Editar
                         </button>
                     </ion-col>

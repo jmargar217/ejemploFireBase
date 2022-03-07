@@ -17,7 +17,7 @@ export class LoginPage implements OnInit {
   usuario:Usuario={
     email:'',
     password:''
-  }
+  };
 
   constructor(private fb: FormBuilder, private servicioAcceso:AccesoService) { }
 

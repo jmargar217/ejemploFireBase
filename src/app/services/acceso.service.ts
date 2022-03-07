@@ -57,10 +57,6 @@ export class AccesoService {
     });
   }
 
-
-
-
-
   showAlert() {
     this.alertController.create({
       header: 'Error',

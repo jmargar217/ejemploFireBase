@@ -1,4 +1,7 @@
+/* eslint-disable eqeqeq */
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 import { Bicicleta } from '../interfaces/interface';
 import { DataService } from '../services/data.service';
 
@@ -10,7 +13,8 @@ import { DataService } from '../services/data.service';
 export class ListadoBicisPage implements OnInit {
 
   bicicletas: Bicicleta[]=[];
-  constructor(private servicioCRUD: DataService) { }
+  constructor(private servicioCRUD: DataService, private router: Router,
+    private alertController: AlertController) { }
 
   ngOnInit() {
     this.getBicicletas();
@@ -19,8 +23,12 @@ export class ListadoBicisPage implements OnInit {
   getBicicletas(){
     this.servicioCRUD.getBicis().subscribe(resp=>{
       this.bicicletas=resp;
-      console.log(resp);
+      if(this.bicicletas.length==0){
+        this.router.navigateByUrl('menu');
+      }
     });
   }
+
+
 
 }

@@ -31,10 +31,15 @@ const routes: Routes = [
     loadChildren: () => import('./detalles/detalles.module').then( m => m.DetallesPageModule)
   },
   {
+    path: 'editar-bici',
+    loadChildren: () => import('./editar-bici/editar-bici.module').then( m => m.EditarBiciPageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   }
+
 
 ];
 
