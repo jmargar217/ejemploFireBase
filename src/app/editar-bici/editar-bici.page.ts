@@ -39,7 +39,6 @@ export class EditarBiciPage implements OnInit {
   getBici(){
     this.servicioCRUD.getBiciById(this.rutaActiva.snapshot.params['id']).subscribe({
       next: data =>{
-        console.log(data);
         this.bicicleta=data;
         this.ver=true;
       },

@@ -32,6 +32,6 @@ export class DataService {
 
   updateBici(bicicleta: Bicicleta) {
     const biciRef = doc(this.firestore, `bicicletas/${bicicleta.id}`);
-    return updateDoc(biciRef, { marca: bicicleta.marca, modelo: bicicleta.modelo, color:bicicleta.color});
+    return updateDoc(biciRef, { marca: bicicleta.marca, modelo: bicicleta.modelo, color:bicicleta.color, imagen: bicicleta.imagen});
   }
 }
