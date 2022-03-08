@@ -6,6 +6,11 @@
 
 <ion-content>
     <br><br>
+    <ion-card>
+      <div class="img-container" *ngIf="mostrar">
+          <img src="{{bicicleta.imagen}}">
+      </div>
+      </ion-card>
     <form (ngSubmit)="addBici()" autocomplete="off" #formulario="ngForm">
         <ion-item>
             <ion-label position="floating">Marca</ion-label>
@@ -16,16 +21,16 @@
             <ion-label position="floating">Modelo</ion-label>
             <ion-input [(ngModel)]="bicicleta.modelo" placeholder="Indique el modelo de la bicicleta" name="modelo" type="text" required></ion-input>
         </ion-item>
-
+        <ion-item>
+          <ion-label position="floating">Imagen</ion-label>
+          <ion-input [(ngModel)]="bicicleta.imagen" (change)="cambiarEstado()" type="text" name="imagen" placeholder="Indique la url de la imagen"></ion-input>
+      </ion-item>
         <ion-item>
             <ion-label position="floating">Color</ion-label>
             <ion-input [(ngModel)]="bicicleta.color" type="text" placeholder="Indique el color de la bicicleta" name="color" required></ion-input>
         </ion-item>
 
-        <ion-item>
-          <ion-label position="floating">Imagen</ion-label>
-          <ion-input [(ngModel)]="bicicleta.imagen" type="text" name="imagen" placeholder="Indique la url de la imagen"></ion-input>
-      </ion-item>
+
 
         <ion-button class="ion-margin-top" type="submit" [disabled]="formulario.invalid" expand="block" color="dark">
             Añadir bicicleta

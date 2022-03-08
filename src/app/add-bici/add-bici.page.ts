@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/type-annotation-spacing */
 /* eslint-disable @typescript-eslint/semi */
@@ -15,6 +16,7 @@ import { DataService } from '../services/data.service';
 })
 export class AddBiciPage implements OnInit {
 
+  mostrar: boolean = false;
   formulario: FormGroup=this.fb.group({
     marca:! [''],
     modelo:![''],
@@ -33,6 +35,10 @@ export class AddBiciPage implements OnInit {
     private router:Router) { }
 
   ngOnInit() {
+  }
+
+  cambiarEstado(){
+    this.mostrar=true;
   }
 
   addBici(){
