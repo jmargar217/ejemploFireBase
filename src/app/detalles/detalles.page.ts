@@ -38,7 +38,7 @@ export class DetallesPage implements OnInit {
   borrar(){
     this.servicioCRUD.deleteBici(this.bicicleta).then(()=>{
       this.showAlert();
-      this.router.navigateByUrl('listado-bicis');
+      this.router.navigateByUrl('menu');
     });
   }
 

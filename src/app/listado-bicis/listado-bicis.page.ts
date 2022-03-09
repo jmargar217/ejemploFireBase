@@ -23,12 +23,7 @@ export class ListadoBicisPage implements OnInit {
   getBicicletas(){
     this.servicioCRUD.getBicis().subscribe(resp=>{
       this.bicicletas=resp;
-      if(this.bicicletas.length==0){
-        this.router.navigateByUrl('menu');
-      }
     });
   }
-
-
 
 }

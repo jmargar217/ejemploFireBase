@@ -23,7 +23,10 @@
                 </ion-text>
                 <ion-text color="dark">
                     <p><b>Color:</b> {{bicicleta.color}}</p>
-                </ion-text><br>
+                </ion-text>
+                <ion-text color="dark">
+                  <p><b>Tipo de cambio:</b> {{bicicleta.cambio}}</p>
+              </ion-text><br>
                 <ion-row>
                     <ion-col sizeLg="2" sizeMd="2" sizeXl="1">
                         <button [routerLink]="['/editar-bici',bicicleta.id]" ion-button icon-left>

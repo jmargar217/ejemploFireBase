@@ -31,6 +31,15 @@
                         <ion-label position="floating">Imagen</ion-label>
                         <ion-input [(ngModel)]="bicicleta.imagen" type="text" name="imagen"></ion-input>
                     </ion-item>
+                    <ion-item>
+                      <ion-label position="floating">Tipo de cambio</ion-label>
+                      <ion-select [(ngModel)]="bicicleta.cambio" name="cambio" required>
+                        <ion-select-option value="externo">Externo</ion-select-option>
+                        <ion-select-option value="interno">Interno</ion-select-option>
+                        <ion-select-option value="mixto">Mixto</ion-select-option>
+                    </ion-select>
+                    </ion-item>
+
 
                     <ion-button class="ion-margin-top" type="submit" [disabled]="formulario.invalid" expand="block" color="dark">
                         Editar

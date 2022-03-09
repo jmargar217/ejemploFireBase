@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/dot-notation */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { Bicicleta } from '../interfaces/interface';
@@ -17,19 +16,11 @@ export class EditarBiciPage implements OnInit {
   bicicleta!: Bicicleta;
   ver: boolean = false;
 
-  formulario: FormGroup=this.fb.group({
-    marca:! [''],
-    modelo:![''],
-    imagen:![''],
-    color:!['']
-  });
 
   constructor(private rutaActiva: ActivatedRoute,
     private servicioCRUD: DataService,
     private router: Router,
-    private alertController: AlertController,
-    private fb: FormBuilder
-
+    private alertController: AlertController
     ) { }
 
   ngOnInit() {

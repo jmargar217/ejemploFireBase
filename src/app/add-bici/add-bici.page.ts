@@ -1,9 +1,9 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/type-annotation-spacing */
 /* eslint-disable @typescript-eslint/semi */
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { Bicicleta } from '../interfaces/interface';
@@ -17,20 +17,17 @@ import { DataService } from '../services/data.service';
 export class AddBiciPage implements OnInit {
 
   mostrar: boolean = false;
-  formulario: FormGroup=this.fb.group({
-    marca:! [''],
-    modelo:![''],
-    color:!['']
-  });
+  prueba: string ='';
 
   bicicleta:Bicicleta = {
-    marca:'',
-    modelo:'',
-    imagen:'',
-    color:''
+    marca: '',
+    modelo: '',
+    imagen: '',
+    color: '',
+    cambio: ''
   }
 
-  constructor(private fb: FormBuilder, private servicioCrud:DataService,
+  constructor( private servicioCrud:DataService,
     private alertController: AlertController,
     private router:Router) { }
 
@@ -40,6 +37,7 @@ export class AddBiciPage implements OnInit {
   cambiarEstado(){
     this.mostrar=true;
   }
+
 
   addBici(){
     if(this.bicicleta.imagen==''){

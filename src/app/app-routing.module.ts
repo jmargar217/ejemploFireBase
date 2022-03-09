@@ -34,6 +34,11 @@ const routes: Routes = [
     path: 'editar-bici',
     loadChildren: () => import('./editar-bici/editar-bici.module').then( m => m.EditarBiciPageModule)
   },
+
+  {
+    path: 'navbar',
+    loadChildren:() => import('./shared/shared.module').then( m => m.SharedModule)
+  },
   {
     path: '',
     redirectTo: 'home',

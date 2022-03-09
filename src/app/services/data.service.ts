@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { Injectable } from '@angular/core';
 import { Firestore, collection, collectionData, doc, docData, addDoc, deleteDoc, updateDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
@@ -32,6 +33,6 @@ export class DataService {
 
   updateBici(bicicleta: Bicicleta) {
     const biciRef = doc(this.firestore, `bicicletas/${bicicleta.id}`);
-    return updateDoc(biciRef, { marca: bicicleta.marca, modelo: bicicleta.modelo, color:bicicleta.color, imagen: bicicleta.imagen});
+    return updateDoc(biciRef, { marca: bicicleta.marca, modelo: bicicleta.modelo, color:bicicleta.color, imagen: bicicleta.imagen, cambio: bicicleta.cambio});
   }
 }

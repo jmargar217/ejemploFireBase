@@ -14,6 +14,7 @@ export interface Bicicleta {
   marca: string,
   modelo: string,
   imagen: string,
-  color: string
+  color: string,
+  cambio: string
 }
 

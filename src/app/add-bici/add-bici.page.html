@@ -14,27 +14,31 @@
     <form (ngSubmit)="addBici()" autocomplete="off" #formulario="ngForm">
         <ion-item>
             <ion-label position="floating">Marca</ion-label>
-            <ion-input [(ngModel)]="bicicleta.marca" placeholder="Indique la marca de la bicicleta" type="text" name="marca" required></ion-input>
+            <ion-input  [(ngModel)]="bicicleta.marca" #marca="ngModel" placeholder="Indique la marca de la bicicleta" type="text" name="marca" required></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label position="floating">Modelo</ion-label>
-            <ion-input [(ngModel)]="bicicleta.modelo" placeholder="Indique el modelo de la bicicleta" name="modelo" type="text" required></ion-input>
+            <ion-input [(ngModel)]="bicicleta.modelo" #modelo="ngModel" placeholder="Indique el modelo de la bicicleta" name="modelo" type="text" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Imagen</ion-label>
-          <ion-input [(ngModel)]="bicicleta.imagen" (change)="cambiarEstado()" type="text" name="imagen" placeholder="Indique la url de la imagen"></ion-input>
+          <ion-input name="imagen" [(ngModel)]="bicicleta.imagen" #password="ngModel" (change)="cambiarEstado()" type="text" placeholder="Indique la url de la imagen"></ion-input>
       </ion-item>
-        <ion-item>
-            <ion-label position="floating">Color</ion-label>
-            <ion-input [(ngModel)]="bicicleta.color" type="text" placeholder="Indique el color de la bicicleta" name="color" required></ion-input>
-        </ion-item>
-
-
-
+      <ion-item>
+        <ion-label position="floating">Color</ion-label>
+        <ion-input [(ngModel)]="bicicleta.color" type="text" #color="ngModel" placeholder="Indique el color de la bicicleta" name="color" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tipo de cambio</ion-label>
+        <ion-select [(ngModel)]="bicicleta.cambio" #cambio="ngModel" name="cambio" placeholder="Selecciona una" required>
+            <ion-select-option value="externo">Externo</ion-select-option>
+            <ion-select-option value="interno">Interno</ion-select-option>
+            <ion-select-option value="mixto">Mixto</ion-select-option>
+        </ion-select>
+      </ion-item>
         <ion-button class="ion-margin-top" type="submit" [disabled]="formulario.invalid" expand="block" color="dark">
             Añadir bicicleta
         </ion-button>
     </form>
-
 </ion-content>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { UsuarioRegister } from '../interfaces/interface';
 import { AccesoService } from '../services/acceso.service';
 
@@ -9,10 +8,6 @@ import { AccesoService } from '../services/acceso.service';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage implements OnInit {
-  formulario: FormGroup=this.fb.group({
-    email:! [''],
-    password:![''],
-  });
 
   usuario: UsuarioRegister = {
     email:'',
@@ -20,7 +15,7 @@ export class RegistroPage implements OnInit {
     password:''
   };
 
-  constructor(private fb: FormBuilder, private servicioAcceso:AccesoService) { }
+  constructor(private servicioAcceso: AccesoService) { }
 
 
   ngOnInit() {
