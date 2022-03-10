@@ -1,10 +1,9 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>Registro</ion-title>
-    </ion-toolbar>
+<ion-header [translucent]="true">
+  <app-navegacion></app-navegacion>
 </ion-header>
 <ion-content>
     <br><br>
+    <ion-title>Registro</ion-title><br><br>
     <form (ngSubmit)="registro()" autocomplete="off" #formulario="ngForm">
         <ion-item>
             <ion-label position="floating">Nombre</ion-label>

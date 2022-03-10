@@ -1,11 +1,9 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>Añadir bicicleta</ion-title>
-    </ion-toolbar>
+<ion-header [translucent]="true">
+  <app-navegacion></app-navegacion>
 </ion-header>
-
 <ion-content>
     <br><br>
+    <ion-title>Añadir bici</ion-title><br><br>
     <ion-card>
       <div class="img-container" *ngIf="mostrar">
           <img src="{{bicicleta.imagen}}">

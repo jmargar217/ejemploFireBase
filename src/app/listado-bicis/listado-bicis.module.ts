@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ListadoBicisPageRoutingModule } from './listado-bicis-routing.module';
 
 import { ListadoBicisPage } from './listado-bicis.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListadoBicisPageRoutingModule
+    ListadoBicisPageRoutingModule,
+    SharedModule
   ],
   declarations: [ListadoBicisPage]
 })

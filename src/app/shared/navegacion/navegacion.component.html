@@ -1,22 +1,17 @@
-<ion-content>
-  <ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="about">
-      <ion-icon name="person-circle-outline"></ion-icon>
-      <ion-label>About</ion-label>
-    </ion-tab-button>
+<ion-header>
 
-    <ion-tab-button tab="blog">
-      <ion-icon name="list-circle-outline"></ion-icon>
-      <ion-label>Blog</ion-label>
-    </ion-tab-button>
+  <ion-toolbar color="primary">
+    <ion-title>JacaByke</ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" size="large" name="exit" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="login()">
+        <ion-icon slot="icon-only" size="large" name="log-in-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
 
-    <ion-tab-button tab="add-bici'">
-      <ion-icon name="add-circle-outline"></ion-icon>
-      <ion-label>Añadir bici</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-
-</ion-tabs>
-
-</ion-content>
+  </ion-toolbar>
+</ion-header>

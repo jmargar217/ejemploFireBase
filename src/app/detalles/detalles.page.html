@@ -1,14 +1,9 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title *ngIf="ver">
-            <a routerLink="/biblioteca">
-                <ion-icon style="color: white;" name="caret-back-outline"></ion-icon>
-            </a>
-            {{ bicicleta.marca}} {{bicicleta.modelo}}
-        </ion-title>
-    </ion-toolbar>
+<ion-header [translucent]="true">
+  <app-navegacion></app-navegacion>
 </ion-header>
-<ion-content fullscreen>
+<ion-content>
+    <br><br>
+    <ion-title>Detalles</ion-title>
     <div *ngIf="ver">
         <ion-card>
             <div class="img-container">

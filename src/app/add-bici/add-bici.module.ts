@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AddBiciPageRoutingModule } from './add-bici-routing.module';
 
 import { AddBiciPage } from './add-bici.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AddBiciPageRoutingModule
+    AddBiciPageRoutingModule,
+    SharedModule
   ],
   declarations: [AddBiciPage]
 })

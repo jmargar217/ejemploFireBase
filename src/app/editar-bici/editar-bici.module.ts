@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { EditarBiciPageRoutingModule } from './editar-bici-routing.module';
 
 import { EditarBiciPage } from './editar-bici.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EditarBiciPageRoutingModule
+    EditarBiciPageRoutingModule,
+    SharedModule
   ],
   declarations: [EditarBiciPage]
 })

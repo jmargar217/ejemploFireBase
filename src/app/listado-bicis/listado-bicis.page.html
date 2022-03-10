@@ -1,16 +1,14 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>Listado de Bicicletas</ion-title>
-    </ion-toolbar>
+<ion-header [translucent]="true">
+  <app-navegacion></app-navegacion>
 </ion-header>
-
 <ion-content>
+    <br><br>
+    <ion-title>Listado bicis</ion-title><br><br>
     <ion-list>
         <ion-item *ngFor="let bici of bicicletas">
             <ion-thumbnail>
                 <img src="{{bici.imagen}}" />
             </ion-thumbnail>
-
             <ion-label style="margin-left: 2%;">
                 <ion-text color="dark">
                     <h2><b>{{ bici.marca }}</b></h2>
